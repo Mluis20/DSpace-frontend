@@ -1,0 +1,7 @@
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse DSpace",
+
+  // DSpace default: "ISTCRE ::  "
+  "repository.title.prefix": "DSpace :: ",
+}

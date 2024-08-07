@@ -1,0 +1,89 @@
+nav.navbar {
+  border-top: 1px var(--ds-header-navbar-border-top-color) solid;
+  align-items: baseline;
+  color: #660000;
+}
+
+/** Mobile menu styling **/
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .navbar {
+    width: 100%;
+    background-color: var(--bs-white);
+    position: absolute;
+    overflow: hidden;
+    height: 0;
+    &.open {
+      height: 100vh; //doesn't matter because wrapper is sticky
+    }
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  .reset-padding-md {
+    margin-left: calc(var(--bs-spacer) / -2);
+    margin-right: calc(var(--bs-spacer) / -2);
+  }
+}
+
+/* TODO remove when https://github.com/twbs/bootstrap/issues/24726 is fixed */
+.navbar-expand-md.navbar-container {
+  @media screen and (max-width: map-get($grid-breakpoints, md)) {
+    > .container {
+      padding: 0 var(--bs-spacer);
+      a.navbar-brand {
+        display: none;
+      }
+      .navbar-collapsed {
+        display: none;
+      }
+    }
+    padding: 0;
+  }
+  height: 80px;
+}
+
+a.navbar-brand img {
+  max-height: var(--ds-header-logo-height);
+}
+
+.navbar-nav {
+  ::ng-deep a.nav-link {
+    color: #660000;
+  }
+  ::ng-deep a.nav-link:hover {
+    color: #000;
+  }
+}
+
+#collapsingNav{
+  margin-top: 2vw;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #660000;
+}
+
+// .topnav a::after {
+//   content: '|';
+//   padding: 0  0.5em;	
+// }
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}

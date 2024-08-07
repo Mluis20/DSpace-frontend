@@ -1,0 +1,28 @@
+<div class="topnav">
+  <a href="https://www.cruzrojainstituto.edu.ec/" target="_blank" rel="noopener">Web ISTCRE</a>
+  <a href="http://www.sistema-academico.cruzrojainstituto.edu.ec/" target="_blank" rel="noopener">Sistema acad&eacute;mico</a>
+  <a href="https://aulasvirtuales.istcre.edu.ec/login/index.php" target="_blank" rel="noopener">Aulas virtuales</a>
+  <a href="https://sugpro.istcre.edu.ec/" target="_blank" rel="noopener">SUGpro</a>
+  <a href="https://www.office.com/" target="_blank" rel="noopener">Microsoft 365</a>
+  <a href="http://biblioteca.istcre.edu.ec/" target="_blank" rel="noopener">Biblioteca Virtual</a>
+</div>
+<nav [ngClass]="{'open': !(menuCollapsed | async)}" [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+  class="navbar navbar-expand-md navbar-light p-0 navbar-container" role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+  <div class="container h-100">
+    <a class="navbar-brand my-2" routerLink="/home">
+      <img src="assets/images/dspace-logo.jpg" [attr.alt]="'menu.header.image.logo' | translate" />
+    </a>
+
+    <div id="collapsingNav" class="w-100 h-100">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+        <ng-container *ngFor="let section of (sections | async)">
+          <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+        </ng-container>
+      </ul>
+    </div>
+    <ds-search-navbar class="navbar-collapsed"></ds-search-navbar>
+    <ds-lang-switch class="navbar-collapsed"></ds-lang-switch>
+    <!-- <ds-auth-nav-menu class="navbar-collapsed"></ds-auth-nav-menu> -->
+    <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+<div class="background-image-container">
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="d-flex flex-wrap">
+        <div>
+          <h1 id="istcre-title" class="display-3">Repositorio Digital - ISTCRE</h1>
+          <p class="lead"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <picture class="background-image">
+    <!-- <source type="image/webp" srcset="assets/dspace/images/banner.webp 2000w, assets/dspace/images/banner-half.webp 1200w, assets/dspace/images/banner-tall.webp 768w"> -->
+    <source type="image/jpg" srcset="assets/images/banner.jpg 2000w, assets/images/banner-half.jpg 1200w, assets/images/banner-tall.jpg 768w">
+    <img alt="" [src]="'assets/images/banner.jpg'"/><!-- without the []="''" Firefox downloads both the fallback and the resolved image -->
+  </picture>
+</div>
+
